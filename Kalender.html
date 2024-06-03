@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Mijn Publieke Kalender</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css' />
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js'></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        #calendar {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            $('#calendar').fullCalendar({
+                events: [
+                    {
+                        title: 'Beschikbaar',
+                        start: '2024-06-01',
+                        color: 'green'
+                    },
+                    {
+                        title: 'Bezet',
+                        start: '2024-06-05',
+                        end: '2024-06-07',
+                        color: 'red'
+                    },
+                    {
+                        title: 'Beschikbaar',
+                        start: '2024-06-10',
+                        color: 'green'
+                    }
+                ],
+                eventClick: function(event) {
+                    return false; // Voorkom klikken op evenementen
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Evenementen Kalender</h1>
+    <div id='calendar'></div>
+</body>
+</html>
